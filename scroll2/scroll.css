@@ -1,0 +1,30 @@
+#scroll-wrap {
+  position: relative;
+  width: 600px;
+overflow: hidden;
+margin: 0 auto;
+border: 1px solid red; }
+#scroll-wrap .clip {
+  width: 620px;
+  height: 300px;
+  overflow-y: scroll; }
+#scroll-wrap .content:hover {
+  cursor: pointer; }
+#scroll-wrap .scroll-bar {
+  position: absolute;
+  border-left: 1px solid #fff;
+  width: 15px;
+  padding: 0 1px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background: #000; }
+#scroll-wrap .scroll-bar .bar {
+  width: 15px;
+  margin: 0 1px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #fff; }
+#scroll-wrap .scroll-bar .bar:hover {
+  cursor: pointer; }

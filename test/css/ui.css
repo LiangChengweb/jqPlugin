@@ -1,0 +1,237 @@
+html{-webkit-text-size-adjust:none; /*解决chrome浏览器下字体不能小于12px*/}
+body{overflow-x: hidden; font-size: .22rem; color:#000000; font-family:Verdana, Arial, Helvetica, sans-serif;
+		/*font-family:Helvetica Neue",​Helveti...YaHei",​Arial,​sans-serif;*//*手机字体*/
+}
+a{outline:none; text-decoration:none;}a:hover{ text-decoration:underline;}
+
+html{zoom:1;}html *{outline:0;zoom:1;} html button::-moz-focus-inner{border-color:transparent!important;} 
+
+/*设置margin和padding为0*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;} 
+
+table{/*border-collapse:collapse;border-spacing:0;*/} 
+
+fieldset,a img{border:0;} 
+address,caption,cite,code,dfn,em,th,var，i{font-style:normal;font-weight:normal;}
+li{list-style:none;} caption,th{text-align:left;}
+
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;} 
+
+q:before,q:after{content:'';}
+
+a{
+	color: #333; text-decoration: none!important;
+}
+em,i{
+	font-style: normal;
+}
+input[type="submit"],input[type="reset"],input[type="button"],input[type=date],button,select{
+	/*去掉苹果的默认UI来渲染按钮 、解决部分手机浏览器对border：none无效办法*/
+	appearance:none;
+	-moz-appearance:none; /* Firefox */
+	-webkit-appearance:none; /* Safari 和 Chrome */
+	/*去掉微信端input-text在ios轻快下的点击出先黑色半透明背景*/
+	-webkit-tap-highlight-color:rgba(255,0,0,0)!important;
+}
+a,input[type=text],select,input[type=password],textarea{
+	/*去掉微信端input-text在ios轻快下的点击出先黑色半透明背景*/
+	-webkit-tap-highlight-color:rgba(255,0,0,0)!important;
+}
+.gb-mask {
+	position: fixed; top: 0; left: 0; display: none; height: 100%; width: 100%; background: rgba(0,0,0,.5)
+}
+.flex {
+	padding: 0 30px;
+	display: flex;
+	display: -webkit-flex;
+	justify-content: space-between;
+	justify-content: space-between;	
+}
+.dialog {
+	position: fixed; top: 50px; left: 50%; display: none; width: calc(100% - 1rem); overflow: hidder; border-radius: .15rem; background: #fff; 
+	transform: translate(-50%,0);
+	-webkit-transform: translate(-50%,0);
+}
+.top-fix , 
+.bottom-fix {
+	position: fixed; bottom: 0; left: 0; width: 100%; height: 100px; background: rgba(0,0,0,.3);
+}
+
+.bg {
+	background-color: #f3f3f6
+}
+#pageone {
+	padding-top: .2rem;
+}
+/*表单模式1 begin*/
+.form-group {
+	background: #fff; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; margin-bottom: 20px;
+}
+.form-item {
+	position: relative; display: block; padding: .2rem .3rem; font-size: 0; line-height: .45rem; border-bottom: 1px solid #ddd;
+}
+.form-item:last-child {
+	border-bottom: none;
+}
+label.form-item:active {
+	background: #f3f3f3;
+}
+.form-item > div {
+	display: inline-block; font-size: .27rem; line-height: .45rem; vertical-align: top;  
+}
+.form-item .label {
+	width: 1.3rem; height: .45rem; color: #333; 
+}
+.form-item .right {
+	width: calc(100% - 1.3rem); height: auto;
+}
+.form-item select,
+.form-item input[type=text],
+.form-item input[type=password] ,
+.texta textarea {
+	width: 100%; height: .45rem; border: none; font-size: .27rem; color: #aaa; background: none;
+}
+.form-item select {
+	position: absolute; top: 0; left: 0; width: 100%; height: 85px; opacity: 0; 
+}
+.texta {
+	position: relative; height: 2.5rem; 
+}
+.texta textarea {
+	height: 100%; resize: none; line-height: .45rem;
+}
+.texta-handle {
+	position: absolute; bottom: 0; right: 0; color: #999; line-height: 1;
+}
+.limit-count {
+	color: #333;
+}
+.form-item input[type=text]:focus,
+.form-item input[type=password]:focus, 
+.texta textarea:focus {
+	color: #333;
+}
+.radio-group {
+	line-height: 45px;
+}
+.radio-group .radio-item {
+	display: inline-block; height: .45rem; line-height: .45rem;
+}
+.icon-check {
+	display: inline-block; width: .24rem; height: .24rem; padding: .03rem; border: .02rem solid #aaa; border-radius: 100%; vertical-align: middle;
+}
+.icon-check input {
+	width: 100%; height: 100%; vertical-align: top; background-color: rgba(0,0,0,0); opacity: 0;
+}
+.icon-check.active {
+	border-color: #3d3; background: #3d3;  background-clip: content-box;
+}
+.form-item.form-item-file {
+	height: auto;
+}
+.form-item.form-item-file .label ,
+.form-item.form-item-file .right {
+	display: block; width: 100%; height: auto;
+}
+.form-item.form-item-file .right {
+	padding-top: .2rem;
+}
+.file-btn {
+	position: relative; display: inline-block; width: 100px; height: 100px; border: .05rem solid #ddd; border-radius: .1rem;
+}
+.file-btn:after ,
+.file-btn:before {
+	content: ""; position: absolute; top: 50%; left: 50%; width: 6px; height: 60px; border-radius: 3px; background: #ddd;
+	transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+}
+.file-btn:after {
+	width: 60px; height: 5px;
+}
+.file-btn input {
+	width: 100%; height: 100%; opacity: 0; vertical-align: top;
+}
+.file-group > div {
+	display: inline-block; vertical-align: top;
+}
+.file-group .img {
+	position: relative; display: inline-block; height: 1.05rem; width: 1.05rem; overflow: hidden; border: 2px solid #ddd; border-radius: .15rem;
+}
+.file-group .img img {
+	width: 100%; height: 100%; vertical-align: top;
+}
+.file-group .img .close {
+	position: absolute; top: -2px; right: -2px; width: .3rem; height: .3rem; border-radius: 100%; line-height: .25rem; text-align: center; background: rgba(0,0,0,.3);
+}
+/*表单模式1 end*/
+/*dialog begin*/
+.dialog .texta {
+	padding: .1rem;
+}
+.panel-bd {
+	margin-bottom: .2rem
+}
+.dialog-btns {
+	border-top: 1px solid #ddd; height: .5rem; font-size: .25rem; line-height: .5rem;
+}
+.dialog-btns a {
+	float: left; display: block; width: 50%; color: #333; text-align: center;
+}
+.dialog-btns a:active {
+	background: #f3f3f3;
+}
+.dialog-btns .sure {
+	border-bottom-left-radius: .15rem; box-shadow: -1px 0 0 #ddd inset; color: #6af;
+}
+.dialog-btns .exit {
+	border-bottom-right-radius: .15rem;
+}
+/*dialog end*/
+/*media begin*/
+.media-list li {
+	border-bottom: 1px solid #ddd;
+}
+.media{
+	display: block; padding: 0 .3rem; 
+}
+a.media:active {
+	background: #f3f3f3;
+}
+.media-obj {
+	display: table-cell; box-sizing: border-box; padding-right: 10px;
+}
+.media-obj .obj {
+	width: 1rem; height: 1rem;
+}
+.media-bd {
+	display: table-cell; box-sizing: border-box; vertical-align: top;
+}
+.media-title {
+	width: 100%; padding: .05rem 0 .1rem 0; overflow: hidden; font-size: .27rem; white-space: nowrap; text-overflow: ellipsis;  
+}
+.media-bd .words {
+	color: #999; text-align: justify;
+}
+/*set-btns end*/
+.sel-btns {
+	z-index: 9; position: fixed; bottom: 0; left: 0; width: 100%;  font-size: .27rem; text-align: center;
+}
+.sel-btns a {
+	display: block; height: .85rem; color: #333; line-height: .85rem; background: #fff;
+}
+.sel-btns .wrap {
+	margin-bottom: .3rem;
+}
+.sel-btns .wrap a {
+	border-bottom: 1px solid #ddd;
+}
+.sel-btns a:active {
+	background: #f3f3f3;
+}
+.sel-btns .wrap a.btn-off {
+	color: #f00;
+}
+.sel-btns .wrap a:last-child {
+	border: none; 
+}
+/*set-btns 
