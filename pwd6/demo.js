@@ -1,5 +1,5 @@
 $(function(){
-var $input = $(".fake-box input");
+	var $input = $(".fake-box input");
     $("#pwd-input").on("input", function() {
         var pwd = $(this).val().trim();
         for (var i = 0, len = pwd.length; i < len; i++) {
