@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+  <!---->
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="format-detection" content="email=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <title>美联加息</title>
+  <link rel="stylesheet" href="css/common.css" />
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/rem.js"></script>
+  <script type="text/javascript" src="js/jquery.countdown.js"></script>
+</head>
+
+<body>
+  <div class="downdate_wrap">
+    <div class="digits"></div>
+    <script>
+    var now_date = Date.parse(new Date());
+    //这个是传入最后截止时间
+    var end_date = Date.parse(new Date(2017, 0, 20, 0, 0, 0));
+    var term = Math.abs(now_date - end_date);
+    var dd = Math.floor(term / (24 * 60 * 60 * 1000));
+    if (dd < 10) {
+      dd = "0" + dd;
+    }
+    var hh = Math.floor((term - dd * 24 * 60 * 60 * 1000) / (60 * 60 * 1000));
+    if (hh < 10) {
+      hh = "0" + hh;
+    }
+    var mm = Math.floor((term - dd * 24 * 60 * 60 * 1000 - hh * 60 * 60 * 1000) / (60 * 1000));
+    if (mm < 10) {
+      mm = "0" + mm;
+    }
+    var ss = Math.floor((term - dd * 24 * 60 * 60 * 1000 - hh * 60 * 60 * 1000 - mm * 60 * 1000) / 1000);
+    if (ss < 10) {
+      ss = "0" + ss;
+    }
+    $(function() {
+      $(".digits").countdown({
+        image: "js/digits.png",
+        format: "dd:hh:mm:ss",
+        startTime: "" + dd + ":" + hh + ":" + mm + ":" + ss, //startTime: "01:10:00:00",
+      });
+      $('.cntSeparator').css({
+        'font-size': '.2rem',
+        'line-height': '2',
+        'position': 'relative',
+        'top': '.13rem'
+      });
+      $(".cntSeparator").eq(0).clone().appendTo(".digits");
+      $('.cntSeparator').eq(0).text('天');
+      $('.cntSeparator').eq(1).text('时');
+      $('.cntSeparator').eq(2).text('分');
+      $('.cntSeparator').eq(3).text('秒');
+    });
+    </script>
+  </div>
+</body>
+
+</html>
