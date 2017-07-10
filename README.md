@@ -1,1 +1,7 @@
 ﻿- [小球碰撞](https://liangchengweb.github.io/jqPlugin/bump)
+- [拖拽](https://liangchengweb.github.io/jqPlugin/drag)
+- [倒计时](https://liangchengweb.github.io/jqPlugin/downCount)
+- [图片上传](https://liangchengweb.github.io/jqPlugin/imgupload)
+- [密码六位方格](https://liangchengweb.github.io/jqPlugin/pwd6)
+- [滚动条](https://liangchengweb.github.io/jqPlugin/scroll)
+- [上拉加载](https://liangchengweb.github.io/jqPlugin/pullup)
