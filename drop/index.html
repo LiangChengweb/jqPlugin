@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>drop</title>
+<script src="jquery.js"></script>
+<script src="drop.js"></script>
+<script>
+$(function(){
+	$('.box').drop();
+$('#box').slideUp('slow').slideDown('slow').queue(function () {
+	$(this).css('background', 'orange');
+});
+})
+</script>
+</head>
+<body>
+<p class="over">
+	x值：<span class="x"></span>&emsp;&emsp;y值：<span class="y"></span>
+</p>
+<div class="box"></div>
+</body>
+<style>
+	.box {
+		cursor: pointer;
+		width: 100px; height: 100px; background: url(drop.jpg) no-repeat center; border-radius: 100%;
+		/*position: absolute; top: 100px; left: 0;*/
+	}
+</style>
+</html>

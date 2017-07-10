@@ -1,0 +1,30 @@
+<!DOCTYPE=html>  
+<html>  
+<head>
+<meta charset="UTF-8"/>
+<title>下拉加载</title>
+<script src="jquery.js" type="text/javascript"></script>
+<script src="scrollbottom.js" type="text/javascript"></script>
+<style type="text/css">
+.wrap {
+	width: 200px; height: 500px; border: 1px solid #333; overflow-y: scroll;
+}
+.box {
+	height: 1000px;
+}
+</style>
+<script>
+$(function(){
+	$('button').scrollbottom($('.box'),$('.wrap'));
+});
+</script>
+ </head>  
+<body>
+<div class="wrap">
+	<div class="box">
+		
+	</div>
+</div>
+<button type="button">btn</button>
+</body>
+</html>  
