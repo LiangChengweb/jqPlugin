@@ -3,9 +3,9 @@ jQuery.fn.drag = function() {
 	ele.parent().css('overflow','hidden');
 	//初始坐标
 	var a = 0,
-		b = 0,
-		c = 0,
-		d = 0;
+			b = 0,
+			c = 0,
+			d = 0;
 	//是否移动的布尔值
 	var flag = false;
 	//window的w，h
@@ -37,7 +37,6 @@ jQuery.fn.drag = function() {
 	})	
 	$(document).mousemove(function(e){
 		if(flag){
-			//$('body').children().css({'z-index':'9','position':'relative'})
 			var c1 = e.pageX;
 			var d1 = e.pageY;
 			var a1 = ele.offset().left;
@@ -54,5 +53,5 @@ jQuery.fn.drag = function() {
 		$('.y').text(y);
 	});
 	//处理浏览器窗口变化
-
+	// TODO
 };

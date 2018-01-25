@@ -1,32 +1,24 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<title>bump</title>
-<script src="jquery.js"></script>
-<script src="bump.js"></script>
-<script>
-$(function(){
-	$('.box').bump();
-})
-</script>
+  <meta charset="UTF-8">
+  <title>bump</title>
+  <style>
+	 html { background: #000; } p { text-align: center; } .box { width: 100px; height: 100px; background: url(../drop/drop.jpg) no-repeat center/100% auto; border-radius: 100%; position: fixed; top: 0; left: 0; }
+	</style>
 </head>
+
 <body>
-<p>
-	x值：<span class="x"></span>&emsp;&emsp;y值：<span class="y"></span>
-</p>
-<div class="box"></div>
+  <p>x值：<span class="x"></span>&emsp;&emsp;y值：<span class="y"></span></p>
+  <div class="box"></div>
+  <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.js"></script>
+  <script src="bump.js"></script>
+  <script>
+  $(function() {
+    $('.box').bump();
+  })
+  </script>
 </body>
-<style>
-	html {
-		background: #000;
-	}
-	p {
-		text-align: center;
-	}
-	.box {
-		width: 100px; height: 100px; background: url(../drop/drop.jpg) no-repeat center/100% auto; border-radius: 100%;
-		position: fixed; top: 0; left: 0;
-	}
-</style>
+
 </html>

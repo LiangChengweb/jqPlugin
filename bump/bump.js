@@ -1,7 +1,7 @@
 jQuery.fn.bump = function() {
-	var ele = $(this);
-	var eleW = ele.width();
-	var eleH = ele.height();
+	var ele 	= $(this);
+	var eleW 	= ele.width();
+	var eleH 	= ele.height();
 	//运动的高度和宽度范围
 	var W = $(window).width()-eleW;
 	var H = $(window).height()-eleH;
@@ -10,14 +10,14 @@ jQuery.fn.bump = function() {
 		H = $(window).height()-eleH;
 	}
 	var tan_b = H / W;
-	var tan = Math.random()*5;
-	var v_h = Math.random()*15000;
-	var s_h = 0;
-	var t = 0,
-		x = 0,
-		y = 0;
-	a = Math.floor(Math.random() * W);
-	b = Math.floor(Math.random() * H);
+			tan 	= Math.random()*5,
+			v_h 	= Math.random()*15000,
+			s_h 	= 0,
+			t 		= 0,
+			x 		= 0,
+			y 		= 0,
+			a 		= Math.floor(Math.random() * W),
+			b 		= Math.floor(Math.random() * H);
 	//建立一个方向的对象
 	var der = {
 		l: true,

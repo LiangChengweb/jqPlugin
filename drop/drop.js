@@ -1,11 +1,10 @@
 jQuery.fn.drop = function() {
 	var ele = this;
-	alert(ele.get());
 	//初始坐标
 	var a = 0,
-		b = 0,
-		c = 0,
-		d = 0;
+			b = 0,
+			c = 0,
+			d = 0;
 	//是否移动的布尔值
 	var flag = false;
 	//window的w，h
@@ -32,7 +31,7 @@ jQuery.fn.drop = function() {
 			//运动到底部的纵坐标
 			var yBottom = H - eleH;
 			//设置重力加速度,是以没1ms运动算起
-			var g = .05;
+			var g = 0.1;
 			//阻力加速度
 			var a = 0.04;
 			//上升高度

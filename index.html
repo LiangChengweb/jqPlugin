@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>实例索引</title>
+  <!-- <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/animate.css/3.5.2/animate.css"> -->
+  <style type="text/css" media="screen">
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    min-width: 1280px;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  #wrap {
+    position: absolute;
+    overflow-y: scroll;
+    left: 0;
+    top: 0;
+    width: 450px;
+    height: 100%;
+    margin: 0 10px;
+    padding: 10px 0;
+  }
+
+  #wrap dl {
+    color: #333;
+    margin-bottom: 10px;
+    padding: 0 5px;
+  }
+
+  #wrap dt {
+    position: relative;
+    margin-left: -5px;
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    background: #f3f3f3;
+  }
+
+  #wrap dt:before {
+    content: "+";
+    display: inline-block;
+    font-weight: normal;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    line-height: 18px;
+    margin-right: 5px;
+    vertical-align: baseline;
+    border: 1px solid #66bb22;
+    border-radius: 6px;
+  }
+
+  #wrap dl.active dt:before {
+    content: "  -";
+  }
+
+  #wrap dd {
+    line-height: 2;
+    display: none;
+    margin-bottom: 2px;
+  }
+
+  #wrap dl.active dd {
+    display: block;
+  }
+
+  #wrap a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  #wrap a:hover {
+    background: #ddeecc;
+  }
+
+  #wrap a.on {
+    background: #66bb22;
+    color: #fff;
+  }
+
+  #wrap .num {
+    display: inline-block;
+    width: 30px;
+    text-align: right;
+  }
+
+  .f-left {
+    position: absolute;
+    left: 448px;
+    background: #fff;
+    border-left: 1px solid #ddd;
+    width: calc(100% - 450px);
+    height: 100%;
+  }
+
+  .f-left iframe {
+    border: none;
+    width: 100%;
+    height: calc(100% - 40px);
+  }
+
+  .f-left .title {
+    background: #f0f0f0;
+    text-align: center;
+  }
+  </style>
+  <script type="text/javascript">
+  window.onload = function() {
+    var wrap = document.querySelector('#wrap');
+    var dls = Array.prototype.slice.call(wrap.getElementsByTagName('dl'));
+    dls.forEach(function(dl, i) {
+      var dt = dl.querySelector('dt');
+      var dds = Array.prototype.slice.call(dl.getElementsByTagName('dd'));
+      var as = Array.prototype.slice.call(dl.getElementsByTagName('a'));
+      // dt的点击事件
+      dt.onclick = function() {
+        if (dl.className === '') {
+          dl.className = 'active';
+
+        } else {
+          dl.className = '';
+        }
+      }
+      // dd 的点击事件
+      dds.forEach(function(dd, i) {
+        var a = dd.querySelector('a');
+        a.onclick = function() {
+          as.forEach(function(item) {
+            item.className = '';
+          })
+          a.className = 'on';
+          var f_left = document.querySelector('.f-left');
+          var title = f_left.querySelector('.title');
+          var iframe = f_left.querySelector('iframe');
+          title.innerText = a.childNodes[1].nodeValue;
+          iframe.src = a.href;
+          return false;
+        }
+      });
+    });
+  }
+  </script>
+</head>
+
+<body>
+  <div id="wrap">
+    <dl class="active">
+      <dt>第一课 (6)</dt>
+      <dd><a class="on" href="bump/index.html" target=""><span class="num">1)</span> 小球碰撞</a></dd>
+      <dd><a href="datestyle/index.html" target=""><span class="num">2)</span> 模拟php的date函数</a></dd>
+      <dd><a href="delegation/index.html" target=""><span class="num">3)</span> 事件委托和抽奖</a></dd>
+      <dd><a href="downCount/index.html" target=""><span class="num">4)</span> 倒计时</a></dd>
+      <dd><a href="drag/index.html" target=""><span class="num">5)</span> 拖拽</a></dd>
+      <dd><a href="drop/index.html" target=""><span class="num">6)</span> 自由落体</a></dd>
+      <dd><a href="ell/index.html" target=""><span class="num">7)</span> ie8多行省略</a></dd>
+      <dd><a href="imgupload/index.html" target=""><span class="num">8)</span> 客户端上传图片预览</a></dd>
+      <dd><a href="pwd6/index.html" target=""><span class="num">9)</span> 6空格密码</a></dd>
+      <dd><a href="scroll/index.html" target=""><span class="num">10)</span> 自做滚动条效果1</a></dd>
+      <dd><a href="scroll2/index.html" target=""><span class="num">11)</span> 自做滚动条效果2</a></dd>
+    </dl>
+  </div>
+  <div class="f-left">
+    <div class="title">小球碰撞</div>
+    <iframe src="bump/index.html"></iframe>
+  </div>
+</body>
+
+</html>

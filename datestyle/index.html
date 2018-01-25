@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>test</title>
+  <script src="index.js"></script>
+</head>
+
+<body>
+  <p>日期时间
+    <input type="" name="" value="1/26/2018 12:58:54">
+  </p>
+  <p>输出格式
+    <select name="" id="">
+      <option value="y-m-d">
+        y-m-d</option>
+      <option value="y-m-d h:m:s">
+        y-m-d h:m:s</option>
+      <option value="y-m-d h:m">
+        y-m-d h:m</option>
+      <option value="m-d">
+        m-d</option>
+      <option value="m-d h:m:s">
+        m-d h:m:s</option>
+      <option value="h:m">
+        h:m</option>
+      <option value="h:m:s">
+        h:m:s</option>
+    </select>
+  </p>
+  <p>
+    <button type="button">转换</button>
+  </p>
+  <p>
+    <input type="text" readonly name="">
+  </p>
+  <p>这哥demo代码的联系目的是：尽量少用if语句</p>
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var btn = document.querySelector('button');
+
+  btn.onclick = function() {
+    var inputs = Array.prototype.slice.call(document.querySelectorAll('input'));
+    var val = inputs[0].value.trim();
+    var formatStyle = document.querySelector('select').value.trim();
+    // 将时间格式话输出
+    inputs[1].value = datestyle(val, formatStyle);
+  };
+}, false);
+</script>
+
+</html>
